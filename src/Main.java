@@ -10,11 +10,15 @@ public class Main {
                 String application_name = input.nextLine();
                 ProcessBuilder pb = new ProcessBuilder(application_name); // конструктор
                 Process process = pb.start(); // запускаем процесс
+                System.out.println("Хотите вывести информацию о процессе? да/нет");
+                String answer1 = input.nextLine();
+                if (answer1.equals("да")){
+                    System.out.println(process.info());
+                }
                 System.out.println("Хотите закрыть процесс? да/нет");
                 String answer = input.nextLine();
                 if (answer.equals("да")){
                 process.destroy(); // Закрываем процесс
-
                 System.out.println("Процесс закрыт");
                 }
             }
